@@ -27,4 +27,3 @@ students:
     student_endpoint: "/"
     health_endpoint: "/"
     port: 80
-# Test workflow trigger at Thu Feb  5 10:44:04 CST 2026
