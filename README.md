@@ -27,7 +27,7 @@ After completing Week 01 Lab 03 (Container Registries), submit your container fo
    - Your `/health` endpoint returns 200 OK
 
 6. **Once merged**, your container will be automatically deployed!
-7. **View your app** at: `https://container-course.ziyotek.edu/students/your-github-username`
+7. **View your app** at: `https://container-course.lab.shart.cloud/students/your-github-username`
 
 ## Requirements
 
