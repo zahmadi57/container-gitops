@@ -52,34 +52,37 @@ for i in $(seq 0 $((STUDENT_COUNT - 1))); do
         continue
     fi
 
+    # Convert username to lowercase for Kubernetes resource names
+    USERNAME_LOWER="${USERNAME,,}"
+
     echo "Generating resources for: $USERNAME"
 
     # Add to student list for gallery (compact JSON)
     STUDENT_LIST=$(echo "$STUDENT_LIST" | jq -c --arg name "$NAME" --arg user "$USERNAME" '. += [{"name": $name, "github_username": $user}]')
 
     # Generate Deployment
-    cat > "$OUTPUT_DIR/student-${USERNAME}-deployment.yaml" <<EOF
+    cat > "$OUTPUT_DIR/student-${USERNAME_LOWER}-deployment.yaml" <<EOF
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: student-${USERNAME}
+  name: student-${USERNAME_LOWER}
   namespace: ${NAMESPACE}
   labels:
     app: student-app
-    student: ${USERNAME}
+    student: ${USERNAME_LOWER}
     week: "${WEEK}"
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: student-app
-      student: ${USERNAME}
+      student: ${USERNAME_LOWER}
   template:
     metadata:
       labels:
         app: student-app
-        student: ${USERNAME}
+        student: ${USERNAME_LOWER}
     spec:
       containers:
       - name: student-app
@@ -115,14 +118,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: student-${USERNAME}-svc
+  name: student-${USERNAME_LOWER}-svc
   namespace: ${NAMESPACE}
   labels:
-    student: ${USERNAME}
+    student: ${USERNAME_LOWER}
 spec:
   selector:
     app: student-app
-    student: ${USERNAME}
+    student: ${USERNAME_LOWER}
   ports:
   - port: 80
     targetPort: ${PORT}
