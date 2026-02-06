@@ -64,6 +64,7 @@ jobs:
 
       - name: Trigger ArgoCD sync
         if: steps.commit.outputs.changed == 'true'
+        continue-on-error: true
         run: |
           echo "=== Triggering ArgoCD sync ==="
 
@@ -90,6 +91,7 @@ jobs:
 
       - name: Post deployment summary
         if: steps.commit.outputs.changed == 'true'
+        continue-on-error: true
         run: |
           echo "## 🚀 Deployment Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
