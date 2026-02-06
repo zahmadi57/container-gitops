@@ -19,7 +19,7 @@ students:
     health_endpoint: "/health"
     port: 5000
   - name: "Otajon Burkhonov"
-    github_username: "Otajon99"
+    github_username: "otajon99"
     container_image: "ghcr.io/otajon99/container-course-student:v3-student"
     student_endpoint: "/student"
     health_endpoint: "/health"
