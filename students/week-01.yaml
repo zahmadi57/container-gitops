@@ -12,16 +12,22 @@ metadata:
   namespace: container-course-week01
 
 students:
-  # Example entry - remove this and add your own:
-  # - name: "John Doe"
-  #   github_username: "johndoe"
-  #   container_image: "ghcr.io/johndoe/container-course-student:latest"
+  - name: "Mohammad Siddiqi"
+    github_username: "almsid"
+    container_image: "ghcr.io/almsid/container-course-student:latest"
+    student_endpoint: "/student"
+    health_endpoint: "/health"
+    port: 5000
+# - name: "Jared Gore"
+  #   github_username: "jlgore"
+  #   container_image: "ghcr.io/jlgore/container-course-student:latest"
   #   student_endpoint: "/student"
   #   health_endpoint: "/health"
-  #   port: 5000
-    - name: "Jared Gore"
-      github_username: "jlgore"
-      container_image: "ghcr.io/jlgore/container-course-student:latest"
+
+
+    - name: "Otajon Burkhonov"
+      github_username: "Otajon99"
+      container_image: "ghcr.io/otajon99/container-course-student:v3-student"
       student_endpoint: "/student"
       health_endpoint: "/health"
     - name: "Emma Zinyak"
@@ -29,6 +35,7 @@ students:
       container_image: "ghcr.io/emmzi55/container-course-student:3-student"
       student_endpoint: "/student"
       health_endpoint: "/health"
+      
   # Add your submission below this line:
 # Test trigger 1770313044
 # Final test 1770313541
