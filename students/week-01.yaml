@@ -12,17 +12,31 @@ metadata:
   namespace: container-course-week01
 
 students:
+  - name: "Jared Gore"
+    github_username: "jlgore"
+    container_image: "ghcr.io/jlgore/container-course-student:latest"
+    student_endpoint: "/student"
+    health_endpoint: "/health"
+
+  - name: "Omar Masood"
+    github_username: "omar-masood"
+    container_image: "ghcr.io/omar-masood/container-course-student:v3-student"
+    student_endpoint: "/student"
+    health_endpoint: "/health"
+
   - name: "Mohammad Siddiqi"
     github_username: "almsid"
     container_image: "ghcr.io/almsid/container-course-student:latest"
     student_endpoint: "/student"
     health_endpoint: "/health"
     port: 5000
+
   - name: "Otajon Burkhonov"
     github_username: "otajon99"
     container_image: "ghcr.io/otajon99/container-course-student:v3-student"
     student_endpoint: "/student"
     health_endpoint: "/health"
+
   - name: "Emma Zinyak"
     github_username: "emmzi55"
     container_image: "ghcr.io/emmzi55/container-course-student:3-student"
@@ -30,11 +44,3 @@ students:
     health_endpoint: "/health"
 
   # Add your submission below this line:
-# Test trigger 1770313044
-# Final test 1770313541
-# Test with labels 1770313875
-# Final test 1770314436
-# Test with scale set name 1770314730
-# Test final workflow 1770315026
-# Test with curl 1770315075
-# Test with permissions fix
